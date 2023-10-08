@@ -1,3 +1,4 @@
+from pprint import pprint
 cook_book = {}
 with open('recipes.txt', 'rt', encoding='utf8') as file:
     for line in file:
@@ -12,4 +13,13 @@ with open('recipes.txt', 'rt', encoding='utf8') as file:
             ingredient_list.append(ingredients)
         file.readline()
         cook_book[dish_name] = ingredient_list
-    print(cook_book)
+
+def get_shop_list_by_dishes(dishes, person_count):
+    result = {}
+    for x in dishes:
+        for j in cook_book[x]:
+            result[j['ingredient_name']] = {'measure': j['measure'].strip(),
+                                            'quantity': int(j['quantity']*person_count)}
+    pprint(result)
+get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
+
