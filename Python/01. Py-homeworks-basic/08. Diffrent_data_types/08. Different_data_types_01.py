@@ -1,5 +1,6 @@
 import json
 
+
 def read_json(file_path, word_max_len=6, top_words_amt=10):
     with open('newsafr.json', encoding='utf-8') as f:
         json_data = json.load(f)
@@ -11,7 +12,7 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
     new_set = set(new_list)
     for word in new_set:
         new_dict[word] = new_list.count(word)
-    sorted_dict = sorted(new_dict.items(), key= lambda x:x[1], reverse=True)
+    sorted_dict = sorted(new_dict.items(), key=lambda x: x[1], reverse=True)
     finish = list()
     for i in sorted_dict:
         finish.append(i[0])
