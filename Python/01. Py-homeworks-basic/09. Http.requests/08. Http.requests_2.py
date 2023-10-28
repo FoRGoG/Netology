@@ -19,7 +19,7 @@ class YaUploader:
 
 if __name__ == '__main__':
     path_to_file = r'Send_to_yandex_disk/ZHU-Faded.jpg'
-    token = 'y0_AgAAAAAE_PNZAADLWwAAAADkr2lHEnBu0_9CSfuOP-KJAsGX4ulwvNI'
+    token = ''
     uploader = YaUploader(token)
     result = uploader.upload(path_to_file)
 
