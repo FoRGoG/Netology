@@ -1,0 +1,25 @@
+Current time and date: 2023-11-30 20:37:08.175256 
+Name of function: hello_world 
+Their arguments: () and {} 
+Got some result: Hello World 
+
+Current time and date: 2023-11-30 20:37:08.175256 
+Name of function: summator 
+Their arguments: (2, 2) and {} 
+Got some result: 4 
+
+Current time and date: 2023-11-30 20:37:08.176252 
+Name of function: div 
+Their arguments: (6, 2) and {} 
+Got some result: 3.0 
+
+Current time and date: 2023-11-30 20:37:08.176252 
+Name of function: summator 
+Their arguments: (4.3,) and {'b': 2.2} 
+Got some result: 6.5 
+
+Current time and date: 2023-11-30 20:37:08.176252 
+Name of function: summator 
+Their arguments: () and {'a': 0, 'b': 0} 
+Got some result: 0 
+
