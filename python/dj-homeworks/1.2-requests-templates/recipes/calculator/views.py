@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
+from django.http import HttpResponse
+from django.core.paginator import Paginator
 
 DATA = {
     'omlet': {
@@ -16,6 +18,12 @@ DATA = {
         'сыр, ломтик': 1,
         'помидор, ломтик': 1,
     },
+    'pureshechka': {
+        'соль, г': 1,
+        'молоко, мл': 250,
+        'сливочное масло, г': 50,
+        'картофель, кг': 1.2,
+    },
     # можете добавить свои рецепты ;)
 }
 
@@ -28,3 +36,15 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+
+def hello(request, recipe_name):
+    servings = int(request.GET.get('servings', 1))
+    result = dict()
+    for ingredients, amount in DATA[recipe_name].items():
+        result[ingredients] = amount * servings
+    context = {'recipe': result}
+    return render(request, 'calculator/index.html', context)
+
+def home_view(request):
+    return HttpResponse('Hello, i want you to write some dish into the parameter')
